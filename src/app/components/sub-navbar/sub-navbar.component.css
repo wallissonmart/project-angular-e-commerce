@@ -1,0 +1,114 @@
+.navbar-normal {
+  height: 56px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 0.1px solid #f0eaea;
+  padding-right: 250px;
+  background-color: #fff;
+  margin-top: 96px;
+  width: 100%;
+}
+
+.start-option {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 106px;
+  height: 48px;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+.start-option:hover {
+  background-color: rgba(112, 112, 112, 0.15);
+}
+
+.icon-house {
+  font-size: 22px;
+  margin-top: 1px;
+}
+
+.start-option span {
+  font-size: 18px;
+}
+
+.all-categories-option {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 207px;
+  height: 48px;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+.all-categories-option:hover {
+  background-color: rgba(112, 112, 112, 0.15);
+}
+
+.icon-all-categories {
+  font-size: 22px;
+  margin-top: 1px;
+}
+
+.all-categories-option span {
+  font-size: 18px;
+}
+
+.tags-option {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 123px;
+  height: 48px;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+.tags-option:hover {
+  background-color: rgba(112, 112, 112, 0.15);
+}
+
+.icon-tags {
+  font-size: 22px;
+  margin-top: 1px;
+}
+
+.tags-option span {
+  font-size: 18px;
+}
+
+.kit-option {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 181px;
+  height: 48px;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+.kit-option:hover {
+  background-color: rgba(112, 112, 112, 0.15);
+}
+
+.icon-grill {
+  height: 32px;
+  width: 32px;
+  margin-top: 1px;
+}
+
+.kit-option span {
+  font-size: 18px;
+}

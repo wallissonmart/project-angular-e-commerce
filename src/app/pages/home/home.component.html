@@ -1,0 +1,155 @@
+<div class="container-home">
+  <app-carousel />
+
+  <div class="content-products">
+    <div class="header-content">
+      <div class="ofertas">
+        <svg
+          stroke="#43b02a"
+          fill="#43b02a"
+          stroke-width="0"
+          viewBox="0 0 512 512"
+          aria-hidden="true"
+          focusable="false"
+          height="2rem"
+          width="2rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="32"
+            d="M315.27 33L96 304h128l-31.51 173.23a2.36 2.36 0 002.33 2.77h0a2.36 2.36 0 001.89-.95L416 208H288l31.66-173.25a2.45 2.45 0 00-2.44-2.75h0a2.42 2.42 0 00-1.95 1z"
+          ></path>
+        </svg>
+        <span>Ofertas</span>
+      </div>
+
+      <div class="ver-tudo">
+        <span>ver tudo</span>
+        <svg
+          stroke="#43b02a"
+          fill="#43b02a"
+          stroke-width="0"
+          viewBox="0 0 512 512"
+          aria-hidden="true"
+          focusable="false"
+          height="1em"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="48"
+            d="M184 112l144 144-144 144"
+          ></path>
+        </svg>
+      </div>
+    </div>
+
+    <div class="carousel" #carousel>
+      <button class="prev-button">
+        <svg
+          stroke="#fff"
+          fill="#fff"
+          stroke-width="0"
+          viewBox="0 0 512 512"
+          focusable="false"
+          class="chakra-icon css-xktlef"
+          aria-hidden="true"
+          height="1.5em"
+          width="1.5em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="48"
+            d="M328 112L184 256l144 144"
+          ></path>
+        </svg>
+      </button>
+
+      <div class="products">
+        <div
+          class="card-product"
+          *ngFor="let productPromo of productsPromo"
+          (click)="onCardClick(productPromo.slug)"
+        >
+          <div class="content-img">
+            <img
+              class="img-product"
+              [src]="imageURL + productPromo.images[0]"
+              alt=""
+            />
+            <button class="button-add">
+              <svg
+                stroke="currentColor"
+                fill="currentColor"
+                stroke-width="0"
+                viewBox="0 0 20 20"
+                aria-hidden="true"
+                focusable="false"
+                height="1.5rem"
+                width="1.5rem"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+          </div>
+
+          <div class="precos-content">
+            <span class="price-active">{{
+              productPromo.prices[0].promo_price
+            }}</span>
+            <span class="price-inactive">{{
+              productPromo.prices[0].price
+            }}</span>
+          </div>
+
+          <div>
+            <p class="descricao-product">
+              {{
+                productPromo.name.length > 40
+                  ? productPromo.name.substring(0, 40) + "..."
+                  : productPromo.name
+              }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <button class="next-button">
+        <svg
+          stroke="#fff"
+          fill="#fff"
+          stroke-width="0"
+          viewBox="0 0 512 512"
+          focusable="false"
+          class="chakra-icon css-xktlef"
+          aria-hidden="true"
+          height="1.5em"
+          width="1.5em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="48"
+            d="M184 112l144 144-144 144"
+          ></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>

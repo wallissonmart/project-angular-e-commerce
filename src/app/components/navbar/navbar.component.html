@@ -1,0 +1,41 @@
+<nav class="navbar-fix">
+  <a class="home-link">
+    <img src="../../../assets/logo-navbar.png" class="navbar-logo" alt="Logo" />
+    <span
+      >Supermercado <br />
+      Modelo</span
+    >
+  </a>
+
+  <div
+    class="search-option"
+    #inputSearch
+    [ngStyle]="{
+      'border-color': changeBorderColor ? '#2196f3' : '#ccc'
+    }"
+  >
+    <fa-icon class="icon-search" [icon]="faMagnifyingGlass"></fa-icon>
+    <input
+      type="text"
+      placeholder="O que você procura?"
+      (focus)="onFocusInput()"
+      (blur)="onBlurInput()"
+    />
+  </div>
+
+  <div class="lists-option">
+    <fa-icon class="icon-list" [icon]="faList"></fa-icon>
+    <span>Listas</span>
+  </div>
+
+  <div class="my-account-option">
+    <fa-icon class="icon-user" [icon]="faUser"></fa-icon>
+    <span>Minha Conta</span>
+    <fa-icon class="icon-chevron" [icon]="faChevronDown"></fa-icon>
+  </div>
+
+  <button class="cart-option">
+    <fa-icon [icon]="faCartShopping"></fa-icon>
+    Carrinho
+  </button>
+</nav>

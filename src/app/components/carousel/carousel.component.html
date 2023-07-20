@@ -1,0 +1,11 @@
+<ngb-carousel
+  [interval]="15000"
+  [showNavigationArrows]="false"
+  [showNavigationIndicators]="false"
+>
+  <ng-template ngbSlide *ngFor="let image of images">
+    <div class="picsum-img-wrapper">
+      <img src="assets/{{ image.name }}" alt="Random slide" class="slide" />
+    </div>
+  </ng-template>
+</ngb-carousel>
