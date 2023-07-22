@@ -9,6 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class ProductComponent {
   productSlug: string | null = null;
+  errorLoadingProduct = false;
   product: any;
 
   constructor(
@@ -24,9 +25,11 @@ export class ProductComponent {
   getProductInfo() {
     this.productService.getItemData(this.productSlug).subscribe({
       next: (response) => {
+        this.errorLoadingProduct = false;
         this.product = response.data[0];
       },
       error: (error) => {
+        this.errorLoadingProduct = true;
         console.log(error);
       },
     });
