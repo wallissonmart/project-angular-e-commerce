@@ -11,6 +11,8 @@ export class ProductComponent {
   productSlug: string | null = null;
   errorLoadingProduct = false;
   product: any;
+  priceActive: string | null = null;
+  priceInactive: string | null = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -27,6 +29,8 @@ export class ProductComponent {
       next: (response) => {
         this.errorLoadingProduct = false;
         this.product = response.data[0];
+        this.priceActive = response.data[0].prices[0].promo_price;
+        this.priceInactive = response.data[0].prices[0].price;
       },
       error: (error) => {
         this.errorLoadingProduct = true;

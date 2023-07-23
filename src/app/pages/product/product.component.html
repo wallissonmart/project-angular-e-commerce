@@ -16,6 +16,13 @@
       <div class="info-product">
         <h1 class="product-name">{{ product.name }}</h1>
         <span class="product-brand">{{ product.brand }}</span>
+        <div class="product-prices">
+          <span class="price-active"
+            >R$ {{ product.prices[0].promo_price }}
+            <span class="price-active-uni">/ uni</span>
+          </span>
+          <span class="price-inactive">R$ {{ product.prices[0].price }}</span>
+        </div>
       </div>
     </div>
 
