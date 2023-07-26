@@ -114,6 +114,10 @@
   letter-spacing: 0.0156rem;
 }
 
+.add-cart {
+  display: flex;
+}
+
 .error-message {
   font: 18px;
   text-align: center;
