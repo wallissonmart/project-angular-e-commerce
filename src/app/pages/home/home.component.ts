@@ -63,6 +63,11 @@ export class HomeComponent implements AfterViewInit {
     });
   }
 
+  formatPrice(value: number) {
+    const valueParsed = value.toString();
+    return valueParsed.replace('.', ',');
+  }
+
   onCardClick(slug: string) {
     this.router.navigate(['/product', slug]);
   }

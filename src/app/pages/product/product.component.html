@@ -18,16 +18,31 @@
         <span class="product-brand">{{ product.brand }}</span>
         <div class="product-prices">
           <span class="price-active"
-            >R$ {{ product.prices[0].promo_price }}
+            >R$ {{ formatPrice(product.prices[0].promo_price) }}
             <span class="price-active-uni">/ uni</span>
           </span>
-          <span class="price-inactive">R$ {{ product.prices[0].price }}</span>
+          <span class="price-inactive"
+            >R$ {{ formatPrice(product.prices[0].price) }}</span
+          >
         </div>
         <div class="add-cart">
-          <button class="add-button">+</button>
-          <span class="quantity"></span>
-          <button class="remove-button">-</button>
-          <button class="cart-option">Carrinho</button>
+          <div class="control-buttons">
+            <button
+              class="remove-button"
+              (click)="removeQuantity()"
+              [disabled]="isButtonDisabled"
+            >
+              <fa-icon [icon]="faTrash"></fa-icon>
+            </button>
+            <div class="quantity-div">
+              <span class="quantity">{{ quantity }}</span>
+            </div>
+            <button class="add-button" (click)="addQuantity()">
+              <fa-icon [icon]="faPlus"></fa-icon>
+            </button>
+          </div>
+
+          <button class="cart-option">Adicionar</button>
         </div>
       </div>
     </div>

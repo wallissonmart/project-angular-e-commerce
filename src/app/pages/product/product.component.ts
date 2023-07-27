@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
-
+import { faTrash, faPlus } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -13,6 +13,10 @@ export class ProductComponent {
   product: any;
   priceActive: string | null = null;
   priceInactive: string | null = null;
+  faTrash = faTrash;
+  faPlus = faPlus;
+  quantity = 1;
+  isButtonDisabled: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -22,6 +26,25 @@ export class ProductComponent {
       this.productSlug = params.get('slug');
       this.getProductInfo();
     });
+  }
+
+  formatPrice(value: number) {
+    const valueParsed = value.toString();
+    return valueParsed.replace('.', ',');
+  }
+
+  removeQuantity() {
+    this.quantity = this.quantity - 1;
+    if (this.quantity === 0) {
+      this.isButtonDisabled = true;
+    }
+  }
+
+  addQuantity() {
+    if (this.quantity === 0) {
+      this.isButtonDisabled = false;
+    }
+    this.quantity = this.quantity + 1;
   }
 
   getProductInfo() {
