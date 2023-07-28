@@ -81,7 +81,7 @@ export class HomeComponent implements AfterViewInit {
         }, 0);
       },
       error: (error) => {
-        console.log(error);
+        console.log('Erro:', error);
       },
     });
   }
